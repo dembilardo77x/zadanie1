@@ -1,1 +1,16 @@
+#PostreSQL
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/zadanie
+    username: zadanie
+    password: almarwinnet
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+logging:
+  level:
+    sql: debug
+
 
