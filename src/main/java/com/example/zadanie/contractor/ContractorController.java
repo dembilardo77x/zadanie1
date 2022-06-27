@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Optional;
 @Slf4j
 @RestController
+@RequestMapping("/contractor")
 public class ContractorController {
 
     private final ContractorService contractorService;
@@ -51,7 +52,7 @@ public class ContractorController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    @PostMapping("/add")
+    @PostMapping("/create")
     public ResponseEntity <Contractor> create(@RequestBody Contractor contractor){
         log.info("Stworzono nowego użytkownika");
         Contractor contractor1 = contractorService.create(contractor);
