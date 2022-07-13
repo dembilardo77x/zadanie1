@@ -6,26 +6,26 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-//@Builder
+@Builder(toBuilder = true)
+@Setter
 @Entity(name = "KONTRAHENT")
-
-public class Contractor{
+public class Contractor {
     @Id
     //@SequenceGenerator(name = "id_seq", sequenceName = "id_seq")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
+
     @Column(name = "ID")
     private Long id;
 
     @Column(name = "NAZWA")
     private String name;
 
-    @Column(name="NIP")
+    @Column(name = "NIP")
     private String nip;
 
-    @Column(name="ADRES")
+    @Column(name = "ADRES")
     private String address;
 
     @Column(name = "KOD_POCZTOWY")

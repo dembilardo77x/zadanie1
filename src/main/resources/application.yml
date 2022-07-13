@@ -1,4 +1,6 @@
 #PostreSQL
+server:
+  port: 8888
 
 spring:
   datasource:
@@ -7,10 +9,12 @@ spring:
     password: almarwinnet
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
 logging:
   level:
     sql: debug
+
+
 
 

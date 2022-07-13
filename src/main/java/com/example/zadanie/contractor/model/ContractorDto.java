@@ -1,14 +1,15 @@
 package com.example.zadanie.contractor.model;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import java.time.LocalDateTime;
-
 @Setter
 @Getter
+@Builder
 public class ContractorDto {
+
+    private Long id;
 
     private String name;
 
@@ -21,6 +22,4 @@ public class ContractorDto {
     private String city;
 
     private String country;
-
-
 }
