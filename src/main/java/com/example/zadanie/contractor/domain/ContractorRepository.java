@@ -7,7 +7,5 @@ import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 
 @Repository
-
 public interface ContractorRepository extends JpaRepository<Contractor, Long> {
-
 }

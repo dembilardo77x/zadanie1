@@ -60,11 +60,8 @@ public class ContractorController {
         if (findContractor.isPresent()) {
             log.info("Zaktualizowano użytkownika o id = " + id);
             return ResponseEntity.status(HttpStatus.OK).body(contractorService.update(id, contractorDto));
-        } else {
+        }
             log.error("Użytkownik o id = " + id + " nie istnieje");
             return ResponseEntity.notFound().build();
-        }
     }
-
-
 }

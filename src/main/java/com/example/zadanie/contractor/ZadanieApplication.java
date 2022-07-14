@@ -7,7 +7,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class ZadanieApplication {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(ZadanieApplication.class);
+        SpringApplication.run(ZadanieApplication.class);
     }
 
 }

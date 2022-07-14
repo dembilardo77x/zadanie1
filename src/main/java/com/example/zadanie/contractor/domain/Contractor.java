@@ -13,10 +13,8 @@ import java.time.LocalDateTime;
 @Entity(name = "KONTRAHENT")
 public class Contractor {
     @Id
-    //@SequenceGenerator(name = "id_seq", sequenceName = "id_seq")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-
-    @Column(name = "ID")
+    @Column(name = "ID",nullable = false)
     private Long id;
 
     @Column(name = "NAZWA")

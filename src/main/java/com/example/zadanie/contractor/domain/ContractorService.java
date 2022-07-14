@@ -30,6 +30,7 @@ public class ContractorService {
     }
 
     public void deleteById(Long id) {
+
         contractorRepository.deleteById(id);
     }
 
