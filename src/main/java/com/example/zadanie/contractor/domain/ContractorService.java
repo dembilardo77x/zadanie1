@@ -23,6 +23,7 @@ public class ContractorService {
                 .map(contractorDtoMapper::toContractorDto)
                 .toList();
     }
+
     public Optional<ContractorDto> findById(final Long contractorId) {
         return contractorRepository.findById(contractorId).map(contractorDtoMapper::toContractorDto);
     }
