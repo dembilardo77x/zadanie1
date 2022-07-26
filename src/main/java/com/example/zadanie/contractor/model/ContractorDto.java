@@ -2,9 +2,9 @@ package com.example.zadanie.contractor.model;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.Setter;
 
-@Setter
+import java.time.LocalDateTime;
+
 @Getter
 @Builder
 public class ContractorDto {
@@ -22,4 +22,5 @@ public class ContractorDto {
     private String city;
 
     private String country;
+
 }

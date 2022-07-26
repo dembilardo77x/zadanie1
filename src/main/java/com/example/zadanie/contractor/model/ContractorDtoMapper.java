@@ -5,20 +5,45 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
-
 @Service
 public class ContractorDtoMapper {
-    public ContractorDto map(Contractor contractor) {
-        ContractorDto dto = ContractorDto.builder()
-
-                .id(contractor.getId()).name(contractor.getName()).address(contractor.getAddress()).city(contractor.getCity()).country(contractor.getCountry()).postalCode(contractor.getPostalCode()).nip(contractor.getNip()).build();
-
-        return dto;
+    public ContractorDto toContractorDto(Contractor contractor) {
+        return ContractorDto
+                .builder()
+                .id(contractor.getId())
+                .name(contractor.getName())
+                .address(contractor.getAddress())
+                .city(contractor.getCity())
+                .country(contractor.getCountry())
+                .postalCode(contractor.getPostalCode())
+                .nip(contractor.getNip())
+                .build();
     }
 
-    public Contractor map(ContractorDto dto) {
+    public final Contractor toCreateContractor(final ContractorDto dto) {
+        return Contractor
+                .builder()
+                .name(dto.getName())
+                .address(dto.getAddress())
+                .city(dto.getCity())
+                .country(dto.getCountry())
+                .postalCode(dto.getPostalCode())
+                .nip(dto.getNip())
+                .versionDate(LocalDateTime.now())
+                .creationDate(LocalDateTime.now())
+                .build();
+    }
 
-        Contractor contractor = Contractor.builder().name(dto.getName()).address(dto.getAddress()).city(dto.getCity()).country(dto.getCountry()).postalCode(dto.getPostalCode()).nip(dto.getNip()).versionDate(LocalDateTime.now()).creationDate(LocalDateTime.now()).build();
-        return contractor;
+    public final Contractor toUpdateContractor(final ContractorDto dto) {
+        return Contractor
+                .builder()
+                .name(dto.getName())
+                .address(dto.getAddress())
+                .city(dto.getCity())
+                .country(dto.getCountry())
+                .postalCode(dto.getPostalCode())
+                .nip(dto.getNip())
+                .versionDate(LocalDateTime.now())
+                .build();
     }
 }

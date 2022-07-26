@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-@Setter
 @Entity(name = "KONTRAHENT")
 public class Contractor {
     @Id
@@ -17,29 +16,27 @@ public class Contractor {
     @Column(name = "ID",nullable = false)
     private Long id;
 
-    @Column(name = "NAZWA")
+    @Column(name = "NAZWA",nullable = false)
     private String name;
 
-    @Column(name = "NIP")
+    @Column(name = "NIP",nullable = false)
     private String nip;
 
-    @Column(name = "ADRES")
+    @Column(name = "ADRES",nullable = false)
     private String address;
 
-    @Column(name = "KOD_POCZTOWY")
+    @Column(name = "KOD_POCZTOWY",nullable = false)
     private String postalCode;
 
-    @Column(name = "MIASTO")
+    @Column(name = "MIASTO",nullable = false)
     private String city;
 
-    @Column(name = "KRAJ")
+    @Column(name = "KRAJ",nullable = false)
     private String country;
 
-    @Column(name = "DATA_UTWORZENIA")
+    @Column(name = "DATA_UTWORZENIA",nullable = false)
     private LocalDateTime creationDate;
 
     @Column(name = "DATA_MODYFIKACJI")
     private LocalDateTime versionDate;
-
-
 }
