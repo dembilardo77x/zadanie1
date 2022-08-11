@@ -6,7 +6,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,19 +28,18 @@ public class ContractorService {
     }
 
     public void deleteById(final Long contractorId) {
+
         contractorRepository.deleteById(contractorId);
     }
 
     public ContractorDto create(final ContractorDto contractorDto) {
-        log.info("Stworzono nowego użytkownika : NAZWA - {}, NIP - {}, ADRES - {}, KOD POCZTOWY - {},Miasto - {}, KRAJ - {}"
-                ,contractorDto.getName(),contractorDto.getNip()
-                ,contractorDto.getAddress(),contractorDto.getPostalCode(),contractorDto.getCity(),contractorDto.getCountry());
+        log.info("Stworzono nowego użytkownika : NAZWA - {}, NIP - {}, ADRES - {}, KOD POCZTOWY - {},Miasto - {}, KRAJ - {}",
+                contractorDto.getName(), contractorDto.getNip(), contractorDto.getAddress(), contractorDto.getPostalCode(),
+                contractorDto.getCity(), contractorDto.getCountry());
         return contractorDtoMapper.toContractorDto(contractorRepository.save(contractorDtoMapper.toCreateContractor(contractorDto)));
     }
 
-    public Optional<ContractorDto> update(final Long contractorId,final ContractorDto contractorDto) {
-        Contractor contractor = contractorRepository.findById(contractorId).orElseThrow(
-                () -> new EntityNotFoundException("Podany id nie istnieje"));
+    public Optional<ContractorDto> update(final ContractorDto contractorDto) {
         return Optional.of(contractorDtoMapper.toContractorDto(contractorRepository.save(contractorDtoMapper.toUpdateContractor(contractorDto))));
     }
 }
